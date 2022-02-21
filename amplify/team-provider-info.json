@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-todoapp-staging-85236-authRole",
+      "UnauthRoleArn": "arn:aws:iam::024254119426:role/amplify-todoapp-staging-85236-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::024254119426:role/amplify-todoapp-staging-85236-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-todoapp-staging-85236-deployment",
+      "UnauthRoleName": "amplify-todoapp-staging-85236-unauthRole",
+      "StackName": "amplify-todoapp-staging-85236",
+      "StackId": "arn:aws:cloudformation:us-east-1:024254119426:stack/amplify-todoapp-staging-85236/73bf6e90-922a-11ec-b494-12dbd6a49867",
+      "AmplifyAppId": "d29fn2lofzg5pi"
+    }
+  }
+}
