@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {DataStore} from "aws-amplify";
 import {Todo} from "../models";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,12 @@ export class AppComponent {
   currentAction = 'Add New';
   taskToUpdate: Todo | undefined;
   totalTask = '';
+  currentDateTime: string | null = '';
+
+  constructor(public datepipe: DatePipe) {
+    this.currentDateTime = this.datepipe.transform((new Date), 'MM/dd/yyyy h:mm:ss');
+  }
+
 
   async ngOnInit() {
     await this.getTask();

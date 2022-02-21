@@ -9,6 +9,7 @@ import {InputTextModule} from "primeng/inputtext";
 import {InputTextareaModule} from "primeng/inputtextarea";
 import {SplitterModule} from "primeng/splitter";
 import {ChipModule} from "primeng/chip";
+import {DatePipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import {ChipModule} from "primeng/chip";
     SplitterModule,
     ChipModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
