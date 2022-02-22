@@ -1,44 +1,47 @@
 <h1 class="text-2xl font-semibold text-orange-900 text-center">To-do List / Christian Journey</h1>
 
-<p-splitter [style]="{'height': '300px'}">
-  <ng-template pTemplate>
-    <div class="card m-3">
-      <div class="formgrid grid">
-        <div class="field col-12">
-          <p-chip [label]=totalTask icon="pi pi-microsoft" [removable]="false"></p-chip>
-          {{currentDateTime}}
-        </div>
-        <div class="field col-12">
-          <label for="taskTitle" class="block">Task Title</label>
-          <span class="p-input-icon-left">
+<p-card header="Task Manager">
+  <div class="formgrid grid">
+    <div class="field col-12">
+      <p-chip [label]=totalTask icon="pi pi-microsoft" [removable]="false"></p-chip>
+      {{currentDateTime}}
+    </div>
+    <div class="field col-12">
+      <label for="taskTitle" class="block">Task Title</label>
+      <span class="p-input-icon-left">
             <i class="pi pi-book"></i>
             <input id="taskTitle" type="text" pInputText [(ngModel)]="taskTitle" class="p-inputtext-lg">
           </span>
-        </div>
-        <div class="field col-12">
-          <label for="taskDescription" class="block">Task Description</label>
-          <span class="p-input-icon-left">
+    </div>
+    <div class="field col-12">
+      <label for="taskDescription" class="block">Task Description</label>
+      <span class="p-input-icon-left">
             <i class="pi pi-ticket"></i>
             <textarea id="taskDescription" pInputTextarea [(ngModel)]="taskDescription" cols="100%"
-                    class="p-inputtextarea-resizable"></textarea>
+                      class="p-inputtextarea-resizable"></textarea>
           </span>
+    </div>
+    <div class="field col-12">
+      <p-button [label]=currentAction icon="pi pi-check" iconPos="right" (onClick)="addTask()"></p-button>
+    </div>
+  </div>
+</p-card>
+
+<p-card>
+  <p-orderList [value]="models" header="List of Tasks" [dragdrop]="true">
+    <ng-template let-task pTemplate="item">
+      <div class="flex flex-row">
+        <div class="flex-grow-1 align-items-start">
+          {{task.name}} - {{task.description}}
         </div>
-        <div class="field col-12">
-          <p-button [label]=currentAction icon="pi pi-check" iconPos="right" (onClick)="addTask()"></p-button>
+        <div class="flex-none align-items-end">
+          <button pButton type="button" (click)="deleteTask(task.id)" label="Delete task" class="mr-2"></button>
+          <button pButton type="button" (click)="updateTask(task.id)" label="Update task"></button>
         </div>
       </div>
-    </div>
-  </ng-template>
-  <ng-template pTemplate>
-    <ul>
-      <li *ngFor="let task of models">
-        <button (click)="deleteTask(task.id)">Delete task</button>
-        <button (click)="updateTask(task.id)">Update task</button>
-        {{task.name}} - {{task.description}}
-      </li>
-    </ul>
-  </ng-template>
-</p-splitter>
+    </ng-template>
+  </p-orderList>
+</p-card>
 
 
 <router-outlet></router-outlet>

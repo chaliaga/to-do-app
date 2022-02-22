@@ -10,6 +10,8 @@ import {InputTextareaModule} from "primeng/inputtextarea";
 import {SplitterModule} from "primeng/splitter";
 import {ChipModule} from "primeng/chip";
 import {DatePipe} from "@angular/common";
+import {CardModule} from "primeng/card";
+import {OrderListModule} from "primeng/orderlist";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {DatePipe} from "@angular/common";
     InputTextModule,
     InputTextareaModule,
     SplitterModule,
-    ChipModule
+    ChipModule,
+    CardModule,
+    OrderListModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

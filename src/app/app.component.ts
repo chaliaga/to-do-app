@@ -10,7 +10,7 @@ import {DatePipe} from "@angular/common";
 })
 export class AppComponent {
   title = 'to-do-app';
-  models: Todo[] | undefined;
+  models: Todo[] = [];
   taskTitle = '';
   taskDescription: string | undefined = '';
   id = '';
